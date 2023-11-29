@@ -1,4 +1,4 @@
-# Create a list of amazon cart that has various items
+# Todo
 amazon_cart = [
     'Laptop',
     'Chair',
@@ -25,5 +25,4 @@ print(amazon_cart)
 basket = [300, 1, 2, 3, 4, 5]
 basket.append(200)
 basket.sort()
-basket.sort(reverse=200)
 print(basket)
