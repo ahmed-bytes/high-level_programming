@@ -1,4 +1,6 @@
 """Encrypts and decrypts coded message."""
+from art import caesar_art
+
 alphabet = [
     "a",
     "b",
@@ -26,39 +28,83 @@ alphabet = [
     "x",
     "y",
     "z",
+    " ",
+    "a",
+    "b",
+    "c",
+    "d",
+    "e",
+    "f",
+    "g",
+    "h",
+    "i",
+    "j",
+    "k",
+    "l",
+    "m",
+    "n",
+    "o",
+    "p",
+    "q",
+    "r",
+    "s",
+    "t",
+    "u",
+    "v",
+    "w",
+    "x",
+    "y",
+    "z",
+    " ",
 ]
 
 
-def encrypt(message, points):
-    encrypt_text = ""
-    for letter in message:
-        alpha_index = alphabet.index(letter)
-        if (alpha_index + shift) > 25:
-            alpha_index = 0
-        alpha_index += points
-        new_letter = alphabet[alpha_index]
-        encrypt_text += new_letter
-    return encrypt_text
+def caesar(direction, message, points):
+    if direction == "encode":
+        encrypt_text = ""
+        for letter in message:
+            if letter not in alphabet:
+                encrypt_text += letter
+            else:
+                alpha_index = alphabet.index(letter)
+                alpha_index += points
+                new_letter = alphabet[alpha_index]
+                encrypt_text += new_letter
+        print(encrypt_text)
+    elif direction == "decode":
+        decrypt_text = ""
+        for letter in message:
+            if letter not in alphabet:
+                decrypt_text += letter
+            else:
+                alpha_index = alphabet.index(letter)
+                alpha_index -= points
+                new_letter = alphabet[alpha_index]
+                decrypt_text += new_letter
+        print(decrypt_text)
+    else:
+        print("Command Error!!")
 
 
-def decrypt(message, points):
-    decrypt_text = ""
-    for letter in message:
-        alpha_index = alphabet.index(letter)
-        if ((alpha_index - points) - 1) < 0:
-            new_letter = alphabet[alpha_index]
-            decrypt_text += new_letter
-        else:
-            alpha_index -= points
-            new_letter = alphabet[alpha_index]
-            decrypt_text += new_letter
-    return decrypt_text
+def prompt(response):
+    if response == True or response == "okay" or response == "yes":
+        return True
+    else:
+        return False
 
 
+# Main code
+print(caesar_art)
+decision = True
 print("Welcome To Caecasr Cipher v2.0..")
-direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
-text = input("Type your message:\n").lower()
-shift = int(input("Type the shift number:\n"))
 
-print(encrypt(message=text, points=shift))
-print(decrypt(message=text, points=shift))
+while decision == True:
+    position = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n").lower()
+    text = input("Type your message:\n").lower()
+    shift = int(input("Type the shift number:\n"))
+    shift = shift % 26
+
+    caesar(direction=position, message=text, points=shift)
+
+    choice = input("Do you want to go again!!: 'okay', 'yes'\n").lower()
+    decision = prompt(choice)

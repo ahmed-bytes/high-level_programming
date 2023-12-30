@@ -1,9 +1,9 @@
 """A Hangman game."""
 from random import choice
-from hangman_art import stages, logo
+from art import hangman_stages, hangman_logo
 from hangman_words import word_list
 
-print(logo)
+print(hangman_logo)
 
 word = choice(word_list)
 length = len(word)
@@ -28,7 +28,7 @@ while gameEnd == False:
             print(f"{' '.join(result)}")
 
     if prompt not in word:
-        print(stages[counter])
+        print(hangman_stages[counter])
         print(f"The Letter '{prompt}' is not in the word, You lose a life :(")
         if counter == 0:
             print(f"The word you failed to guess is {word}")

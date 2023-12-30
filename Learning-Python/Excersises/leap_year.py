@@ -16,7 +16,7 @@ def leap_year(num):
 year = int(input("Which year do you want to check: "))
 leap_year(year)
 
-from fibo import fib1 as f
+# from fibo import fib1 as f
 
-if __name__ == "__main__":
-    f(year)
+# if __name__ == "__main__":
+#    f(year)
