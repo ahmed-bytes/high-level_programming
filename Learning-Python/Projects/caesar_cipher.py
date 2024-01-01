@@ -1,5 +1,5 @@
 """Encrypts and decrypts coded message."""
-from art import caesar_art
+from ascii_art import caesar_art
 
 alphabet = [
     "a",

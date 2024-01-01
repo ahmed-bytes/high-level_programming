@@ -1,9 +1,9 @@
 """A Hangman game."""
 from random import choice
-from art import hangman_stages, hangman_logo
+from ascii_art import hangman_stages, hangman_art
 from hangman_words import word_list
 
-print(hangman_logo)
+print(hangman_art)
 
 word = choice(word_list)
 length = len(word)

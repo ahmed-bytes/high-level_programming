@@ -1,4 +1,6 @@
 """BlackJack Simultation."""
+import os
+
 cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
 
 
@@ -54,8 +56,8 @@ def game_on():
         user_score = calculate_score(user_cards)
         computer_score = calculate_score(computer_cards)
 
-        print(f"Cards: {user_cards}\t Score: {user_score}\n")
-        print(f"Computer First Card: {computer_cards[0]}\n")
+        print(f"Cards: {user_cards}\t Score: {user_score}\n\n")
+        print(f"Computer First Card: {computer_cards[0]}\n\n")
 
         if user_score == 0 or user_score > 21 or computer_score == 0:
             iS_GAMEOVER = True
@@ -72,13 +74,14 @@ def game_on():
         computer_cards.append(deal_card())
         computer_score = calculate_score(computer_cards)
 
-    print(f"Cards: {user_cards}\t Score: {user_score}\n")
-    print(f"Computer Cards: {computer_cards}\t Computer Score: {computer_score}\n")
+    print(f"Cards: {user_cards}\t Score: {user_score}\n\n")
+    print(f"Computer Cards: {computer_cards}\t Computer Score: {computer_score}\n\n")
     print(compare(user_score, computer_score))
 
 
 play_again = "y"
 
 while play_again == "y":
+    os.system("clear")
     game_on()
     play_again = input("Type 'y' to play again or 'n' to end: ").lower()

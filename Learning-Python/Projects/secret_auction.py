@@ -9,13 +9,15 @@ def high(bid_dict):
     print(f"The winner is {winner} for ${highest_bid}")
 
 
-from art import auction_art
+from ascii_art import auction_art
+import os
 
 print(auction_art)
 
 more_bidders = True
 result = {}
 while more_bidders == True:
+    os.system("clear")
     name = input("Enter bidder name: ")
     price = int(input("Enter bid price: "))
     result[name] = price
