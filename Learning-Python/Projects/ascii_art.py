@@ -1,6 +1,5 @@
 """Contains all Ascii Art needed for your project."""
-
-hangman_art = """ 
+HANGMAN_ART = """
  _                                             
 | |                                            
 | |__   __ _ _ __   __ _ _ __ ___   __ _ _ __  
@@ -75,7 +74,7 @@ hangman_stages = [
 """,
 ]
 
-caesar_art = """
+CAESAR_ART = """
   ____    _    _____ ____    _    ____     ____ ___ ____  _   _ _____ ____  
  / ___|  / \\  | ____/ ___|  / \\  |  _ \\   / ___|_ _|  _ \\| | | | ____|  _ \\ 
 | |     / _ \\ |  _| \\___ \\ / _ \\ | |_) | | |    | || |_) | |_| |  _| | |_) |
@@ -84,7 +83,8 @@ caesar_art = """
                                                                             
     """
 
-secret_auction_logo = '''
+SECRET_AUCTION_LOGO = '''
+
                          ___________
                          \\         /
                           )_______(
@@ -98,7 +98,7 @@ secret_auction_logo = '''
                       /_______________\\
 '''
 
-higher_lower_logo = """
+HIGHER_LOWER_LOGO = """
     __  ___       __             
    / / / (_)___ _/ /_  ___  _____
   / /_/ / / __ `/ __ \\/ _ \\/ ___/
@@ -110,7 +110,7 @@ higher_lower_logo = """
 /_____/\\____/|__/|\\__/\\___/_/     
 """
 
-higher_lower_vs = """
+HIGHER_LOWER_VS = """
  _    __    
 | |  / /____
 | | / / ___/

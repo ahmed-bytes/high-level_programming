@@ -15,7 +15,7 @@ def calculate_score(cards_list):
     """Sum of all the Cards in a list."""
     if sum(cards_list) == 21 and len(cards_list) == 2:
         return 0
-    elif sum(cards_list) > 21 and 11 in cards_list:
+    if sum(cards_list) > 21 and 11 in cards_list:
         cards_list.remove(11)
         cards_list.append(1)
 
@@ -44,7 +44,7 @@ def game_on():
     """Start Game."""
     computer_cards = []
     user_cards = []
-    iS_GAMEOVER = False
+    is_gameover = False
     user_score = 0
     computer_score = 0
 
@@ -52,7 +52,7 @@ def game_on():
         computer_cards.append(deal_card())
         user_cards.append(deal_card())
 
-    while not iS_GAMEOVER:
+    while not is_gameover:
         user_score = calculate_score(user_cards)
         computer_score = calculate_score(computer_cards)
 
@@ -60,7 +60,7 @@ def game_on():
         print(f"Computer First Card: {computer_cards[0]}\n\n")
 
         if user_score == 0 or user_score > 21 or computer_score == 0:
-            iS_GAMEOVER = True
+            is_gameover = True
         else:
             user_continue_prompt = input(
                 "Type 'y' to get another card or type 'n' to pass: "
@@ -68,14 +68,15 @@ def game_on():
             if user_continue_prompt == "y":
                 user_cards.append(deal_card())
             else:
-                iS_GAMEOVER = True
+                is_gameover = True
 
     while computer_score != 0 and computer_score < 17:
         computer_cards.append(deal_card())
         computer_score = calculate_score(computer_cards)
 
     print(f"Cards: {user_cards}\t Score: {user_score}\n\n")
-    print(f"Computer Cards: {computer_cards}\t Computer Score: {computer_score}\n\n")
+    print(f"Computer Cards: {computer_cards}\t Computer Score: {
+          computer_score}\n\n")
     print(compare(user_score, computer_score))
 
 
