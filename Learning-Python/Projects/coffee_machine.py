@@ -14,8 +14,24 @@ def report():
     print(f"Water: {water}ml\nMilk: {milk}ml\nSeed: {seed}\nMoney: {money}\n")
 
 
+def calc_espresso(p, n, d, q):
+    penny = 0.01 * p
+    nickel = 0.05 * n
+    dime = 0.10 * d
+    quarter = 0.25 * q
+
+
 user_prompt = input(
     "What would you like? (espresso/latte/cappuccino) ").lower()
 
 if 'report' in user_prompt:
     report()
+
+if 'espresso' or 'latte' or 'cappuccino' in user_prompt:
+    user_penny = input("How many Penny: ")
+    user_nickel = input("How many Nickel: ")
+    user_dime = input("How many Dime: ")
+    user_quarter = input("How many quarter: ")
+
+    if 'espresso' in user_prompt:
+        calc_espresso(user_penny, user_nickel, user_dime, user_quarter)
