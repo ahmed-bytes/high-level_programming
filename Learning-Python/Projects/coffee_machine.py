@@ -34,6 +34,12 @@ def process_coins():
     return total
 
 
+def reduce_resources(drink_ingredients):
+    """Make use of resources to make coffee."""
+    for items in drink_ingredients:
+        d.resources[items] -= drink_ingredients[items]
+
+
 IS_ON = True
 PROFIT = 0
 
@@ -57,3 +63,5 @@ while IS_ON:
                     PROFIT += drink["cost"]
                     change = round(payment - drink["cost"], 2)
                     print(f"Here's your change: ${change}")
+                    reduce_resources(drink["ingredients"])
+                    print("Take your coffee :)")
