@@ -1,5 +1,5 @@
 """Encrypts and decrypts coded message."""
-from ascii_art import caesar_art
+from ascii_art import CAESAR_ART
 
 alphabet = [
     "a",
@@ -87,18 +87,18 @@ def caesar(direction, message, points):
 
 
 def prompt(response):
-    if response == True or response == "okay" or response == "yes":
+    if response or response == "okay" or response == "yes":
         return True
     else:
         return False
 
 
 # Main code
-print(caesar_art)
+print(CAESAR_ART)
 decision = True
-print("Welcome To Caecasr Cipher v2.0..")
+print("Welcome To Caesar Cipher v2.0..")
 
-while decision == True:
+while decision:
     position = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n").lower()
     text = input("Type your message:\n").lower()
     shift = int(input("Type the shift number:\n"))
